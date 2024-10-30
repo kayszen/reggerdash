@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <title>NAME AND password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .list-board {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .list-board ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .list-board li {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list-board">
+        <h2>Number and password</h2>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const taskList = document.getElementById('taskList');
+            for (let i = 0; i < localStorage.length; i++) {
+                const name= localStorage.key(i);
+                const password = localStorage.getItem(name);
+                const li = document.createElement('li');
+                li.textContent = `Name: ${name}, password: ${password}`;
+                taskList.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

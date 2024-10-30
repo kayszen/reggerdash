@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN</title>
+    <style>
+        .titlef {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            margin: 0;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .input-form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            margin-top: 20px;
+        }
+        .input-form input {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .input-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="titlef">
+        <h1>ZALO</h1>
+    </div>
+    <div class="input-form">
+        <h2>Login</h2>
+        <input type="text" id="name" placeholder="Name">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="saveData()">Login</button>
+    </div>
+
+    <script>
+        function saveData() {
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            localStorage.setItem(name, password);
+            alert('Login successful!');
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+    </script>
+</body>
+</html>
